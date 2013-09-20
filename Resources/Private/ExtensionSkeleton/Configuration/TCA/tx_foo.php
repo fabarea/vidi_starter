@@ -23,5 +23,9 @@ $tca = array(
 	)
 );
 
-return \TYPO3\CMS\Core\Utility\GeneralUtility::array_merge_recursive_overrule($GLOBALS['TCA']['###DATA_TYPE###'], $tca);
+$result = NULL;
+if (!empty($GLOBALS['TCA']['###DATA_TYPE###'])) {
+	$result = \TYPO3\CMS\Core\Utility\GeneralUtility::array_merge_recursive_overrule($GLOBALS['TCA']['###DATA_TYPE###'], $tca);
+}
+return $result;
 ?>

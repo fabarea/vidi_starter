@@ -28,6 +28,12 @@ if (TYPO3_MODE == 'BE' && class_exists('TYPO3\CMS\Vidi\ModuleLoader')) {
 			->addStyleSheetFiles(array(sprintf('EXT:###EXTENSION_NAME###/Resources/Public/StyleSheets/Backend/%s.css', $dataType)))
 			->setDefaultPid($configuration['default_pid']['value'])
 			->register();
+
+		// Trick for handling TCA which is not placed following TCA convention - which happened in TYPO3 6.1.
+		if (empty($GLOBALS['TCA'][$dataType]['grid'])) {
+			$fileNameAndPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('###EXTENSION_NAME###') . 'Configuration/TCA/' . $dataType . '.php';
+			$GLOBALS['TCA'][$dataType] = require($fileNameAndPath);
+		}
 	}
 }
 ?>
