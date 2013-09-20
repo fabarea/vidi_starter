@@ -138,7 +138,6 @@ class StarterService {
 
 		# Remove obsolete files
 		$this->cleanUp();
-		exit();
 	}
 
 	/**
