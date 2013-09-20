@@ -1,0 +1,24 @@
+ # Plugin configuration
+plugin.tx_vidistarter {
+	settings {
+
+	}
+	view {
+		templateRootPath = {$plugin.tx_vidistarter.view.templateRootPath}
+		partialRootPath = {$plugin.tx_vidistarter.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_vidistarter.view.layoutRootPath}
+		defaultPid = auto
+	}
+}
+
+ # Module configuration
+module.tx_vidistarter {
+	settings < plugin.tx_vidistarter.settings
+	view < plugin.tx_vidistarter.view
+	view {
+		templateRootPath = {$module.tx_vidistarter.view.templateRootPath}
+		partialRootPath = {$module.tx_vidistarter.view.partialRootPath}
+		layoutRootPath = {$module.tx_vidistarter.view.layoutRootPath}
+	}
+}
+

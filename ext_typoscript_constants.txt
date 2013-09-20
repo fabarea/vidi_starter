@@ -1,0 +1,22 @@
+plugin.tx_vidistarter {
+	settings {
+	}
+	view {
+		 # cat=plugin.tx_vidistarter/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:vidi_starter/Resources/Private/Templates/
+		 # cat=plugin.tx_vidistarter/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:vidi_starter/Resources/Private/Partials/
+		 # cat=plugin.tx_vidistarter/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:vidi_starter/Resources/Private/Layouts/
+	}
+}
+module.tx_vidistarter {
+	view {
+		 # cat=module.tx_vidistarter/file; type=string; label=Path to template root (BE)
+		templateRootPath = EXT:vidi_starter/Resources/Private/Backend/Templates/
+		 # cat=module.tx_vidistarter/file; type=string; label=Path to template partials (BE)
+		partialRootPath = EXT:vidi_starter/Resources/Private/Partials/
+		 # cat=module.tx_vidistarter/file; type=string; label=Path to template layouts (BE)
+		layoutRootPath = EXT:vidi_starter/Resources/Private/Backend/Layouts/
+	}
+}

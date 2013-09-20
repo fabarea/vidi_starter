@@ -1,0 +1,94 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"
+      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+      xmlns:vs="http://typo3.org/ns/TYPO3/CMS/VidiStarter/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/TYPO3/CMS/Vidi/ViewHelpers">
+
+<f:layout name="Default"/>
+
+<f:section name="main">
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-typo3">
+			<div class="container-fluid navbar-typo3-top">
+				<div>
+					<div class="row-fluid">
+						<div class="span6">
+						</div>
+						<div class="span6">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid navbar-typo3-bottom">
+				<div>
+					<div class="row-fluid">
+						<div class="span6">
+							<a href="#" id="btn-save">
+								<v:sprite name="actions-document-save"/>
+							</a>
+						</div>
+						<div class="span6 toolbar-left">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<f:flashMessages renderMode="div"/>
+
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.help').tooltip({
+				placement: 'right'
+			});
+
+			$('#btn-save').click(function (e) {
+
+				$('#form-starter').submit();
+				e.preventDefault();
+			});
+		});
+	</script>
+
+	<div id="container-main">
+		<div id="container-main-top" style="width: 99%">
+
+			<f:form action="create" id="form-starter">
+
+				<fieldset>
+					<label>New extension name</label>
+					<f:form.textfield name="extensionName" value="vidi_foo" class="help"
+					                  title="Make sure the extension name is unique. If the same extension exists and is not yet loaded, it will be overridden!"/>
+					<hr/>
+					<span class="help-block">Select the data type for which you would like to start a BE module.</span>
+
+					<div class="control-group">
+						<f:for each="{dataTypes}" as="dataType">
+							<div class="controls">
+								<label class="checkbox" style="width: 500px">
+
+									<f:if condition="{vs:isInModuleLoader(dataType: '{dataType}')}">
+										<f:then>
+											<f:form.checkbox name="dataTypes[]" value="{dataType}" disabled="disabled"
+											                 checked="checked"/>
+										</f:then>
+										<f:else>
+											<f:form.checkbox name="dataTypes[]" value="{dataType}" />
+										</f:else>
+									</f:if>
+									    {dataType}
+								</label>
+							</div>
+						</f:for>
+					</div>
+					<button type="submit" class="btn" style="visibility: hidden">Create module</button>
+				</fieldset>
+			</f:form>
+
+		</div>
+	</div>
+</f:section>
+</html>
+
+
