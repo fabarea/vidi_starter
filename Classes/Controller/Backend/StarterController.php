@@ -61,6 +61,7 @@ class StarterController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 	 * @return void
 	 */
 	public function createAction($extensionName, array $dataTypes = array()) {
+
 		$extensionName = trim($extensionName);
 
 		if (empty($dataTypes)) {
@@ -70,12 +71,16 @@ class StarterController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 			#);
 			$message = sprintf('No data type selected.', $extensionName);
 			$severity = \TYPO3\CMS\Core\Messaging\FlashMessage::WARNING;
+		} elseif (strlen($extensionName) == 0) {
 
-		} elseif (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded($extensionName) && strlen($extensionName) == 0) {
-
-			$message = sprintf('Extension name "%s" already exists or is blank. Nothing was done!', $extensionName);
+			$message = sprintf('Extension name can not be blank. Nothing was done!', $extensionName);
 			$severity = \TYPO3\CMS\Core\Messaging\FlashMessage::ERROR;
-		}  else {
+
+		} elseif (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded($extensionName) || strlen($extensionName) == 0) {
+
+			$message = sprintf('Extension name "%s" is already loaded. Nothing was done!', $extensionName);
+			$severity = \TYPO3\CMS\Core\Messaging\FlashMessage::ERROR;
+		} else {
 
 			/** @var \TYPO3\CMS\VidiStarter\Service\StarterService $starterService */
 			$starterService = $this->objectManager->get('TYPO3\CMS\VidiStarter\Service\StarterService', $extensionName, $dataTypes);
