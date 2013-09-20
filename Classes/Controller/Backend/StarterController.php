@@ -78,8 +78,8 @@ class StarterController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 		}  else {
 
 			/** @var \TYPO3\CMS\VidiStarter\Service\StarterService $starterService */
-			$starterService = $this->objectManager->get('TYPO3\CMS\VidiStarter\Service\StarterService');
-			$starterService->kickStart($extensionName, $dataTypes);
+			$starterService = $this->objectManager->get('TYPO3\CMS\VidiStarter\Service\StarterService', $extensionName, $dataTypes);
+			$starterService->kickStart();
 
 			$message = sprintf('Extension "%s" created. Next step is to activate it in the Extension Manager and fine tune the grid display.', $extensionName);
 			$severity = \TYPO3\CMS\Core\Messaging\FlashMessage::OK;

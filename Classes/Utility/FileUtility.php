@@ -1,5 +1,5 @@
 <?php
-namespace TYPO3\CMS\VidiStarter\Service;
+namespace TYPO3\CMS\VidiStarter\Utility;
 /***************************************************************
  *  Copyright notice
  *
@@ -24,30 +24,36 @@ namespace TYPO3\CMS\VidiStarter\Service;
  ***************************************************************/
 
 /**
- * Service for kick starting an extension.
+ * Utility class related to file structure
  */
-class StarterService {
+class FileUtility {
 
 	/**
-	 * Kick Start a new BE module.
+	 * Recursively copy source to target.
 	 *
-	 * @param string $extensionName
-	 * @param array $dataTypes
-	 * @return void
+	 * @param $source
+	 * @param $target
 	 */
-	public function kickStart($extensionName, array $dataTypes){
+	static public function recursiveCopy($source, $target){
+		if (!is_dir($target)) {
+			\TYPO3\CMS\Core\Utility\GeneralUtility::mkdir($target);
+		}
 
-
-		# Write directory
-
-		# Write ext_tables.php
-
-		# Icons
-
-		# JS + CSS ...
-
-
-		var_dump($extensionName);
+		foreach (
+			$iterator = new \RecursiveIteratorIterator(
+				new \RecursiveDirectoryIterator($source, \RecursiveDirectoryIterator::SKIP_DOTS),
+				\RecursiveIteratorIterator::SELF_FIRST) as $item
+		) {
+			/** @var \SplFileInfo $item */
+			if ($item->isDir()) {
+				$directory = $target . DIRECTORY_SEPARATOR . $iterator->getSubPathName();
+				if (!is_dir($directory)) {
+					mkdir($directory);
+				}
+			} else {
+				copy($item, $target . DIRECTORY_SEPARATOR . $iterator->getSubPathName());
+			}
+		}
 	}
 }
 ?>
