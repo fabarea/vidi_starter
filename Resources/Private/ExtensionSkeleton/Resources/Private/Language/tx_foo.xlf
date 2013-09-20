@@ -15,6 +15,10 @@
 			</trans-unit>
 
 			<!-- labels for the BE module itself -->
+			<trans-unit id="uid" xml:space="preserve">
+				<source>Uid</source>
+			</trans-unit>
+###LANGUAGE_TABLE_LABEL###
 		</body>
 	</file>
 </xliff>

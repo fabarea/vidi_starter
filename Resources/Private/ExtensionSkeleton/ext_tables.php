@@ -22,10 +22,10 @@ if (TYPO3_MODE == 'BE' && class_exists('TYPO3\CMS\Vidi\ModuleLoader')) {
 
 		/** @var \TYPO3\CMS\Vidi\ModuleLoader $moduleLoader */
 		$moduleLoader = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Vidi\ModuleLoader', $dataType);
-		$moduleLoader->setIcon(sprintf('EXT:vidi/Resources/Public/Images/%s.png', $dataType))
-			->setModuleLanguageFile(sprintf('LLL:EXT:vidi/Resources/Private/Language/%s.xlf', $dataType))
-			->addJavaScriptFiles(array(sprintf('EXT:vidi/Resources/Public/JavaScript/%s.js', $dataType)))
-			->addStyleSheetFiles(array(sprintf('EXT:vidi/Resources/Public/StyleSheets/%s.js', $dataType)))
+		$moduleLoader->setIcon(sprintf('EXT:###EXTENSION_NAME###/Resources/Public/Images/%s.png', $dataType))
+			->setModuleLanguageFile(sprintf('LLL:EXT:###EXTENSION_NAME###/Resources/Private/Language/%s.xlf', $dataType))
+			->addJavaScriptFiles(array(sprintf('EXT:###EXTENSION_NAME###/Resources/Public/JavaScript/Backend/%s.js', $dataType)))
+			->addStyleSheetFiles(array(sprintf('EXT:###EXTENSION_NAME###/Resources/Public/StyleSheets/Backend/%s.css', $dataType)))
 			->setDefaultPid($configuration['default_pid']['value'])
 			->register();
 	}

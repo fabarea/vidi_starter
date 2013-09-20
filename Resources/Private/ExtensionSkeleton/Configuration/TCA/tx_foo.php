@@ -14,10 +14,7 @@ $tca = array(
 				'label' => 'LLL:EXT:vidi/Resources/Private/Language/fe_groups.xlf:uid',
 				'width' => '5px',
 			),
-			'title' => array(
-				'visible' => TRUE,
-				'label' => 'LLL:EXT:vidi/Resources/Private/Language/fe_groups.xlf:title',
-			),
+###CONFIGURATION_GRID_TABLE_LABEL###
 			'__buttons' => array(
 				'sortable' => FALSE,
 				'width' => '70px',
