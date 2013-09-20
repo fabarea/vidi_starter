@@ -3,6 +3,7 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="" product-name="local lang module">
 		<header/>
 		<body>
+			<!-- labels for BE module integration with TYPO3 -->
 			<trans-unit id="mlang_labels_tablabel">
 				<source>###DATA_TYPE### management</source>
 			</trans-unit>
@@ -12,6 +13,8 @@
 			<trans-unit id="mlang_labels_tabdescr" xml:space="preserve">
 				<source>Module for managing ###DATA_TYPE###</source>
 			</trans-unit>
+
+			<!-- labels for the BE module itself -->
 		</body>
 	</file>
 </xliff>

@@ -15,7 +15,7 @@ if (TYPO3_MODE == 'BE' && class_exists('TYPO3\CMS\Vidi\ModuleLoader')) {
 	$configurationUtility = $objectManager->get('TYPO3\CMS\Extensionmanager\Utility\ConfigurationUtility');
 	$configuration = $configurationUtility->getCurrentConfiguration('vidi');
 
-	###DATA_TYPES_ARRAY###
+	###DATA_TYPES_ARRAY###;
 
 	// Loop around the data types and register them to be displayed within a BE module.
 	foreach ($dataTypes as $dataType) {
