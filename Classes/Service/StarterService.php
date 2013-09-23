@@ -171,6 +171,7 @@ class StarterService {
 
 			$markers['CONFIGURATION_GRID_TABLE_LABEL'] = <<<EOF
 			'{$tcaTableService->getLabelField()}' => array(
+				'editable' => TRUE,
 				'label' => 'LLL:EXT:{$this->extensionName}/Resources/Private/Language/{$dataType}.xlf:{$tcaTableService->getLabelField()}',
 			),
 EOF;
