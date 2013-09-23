@@ -168,6 +168,7 @@ class StarterService {
 			$tcaTableService = \TYPO3\CMS\Vidi\Tca\TcaServiceFactory::getTableService($dataType);
 
 			$markers['DATA_TYPE'] = $dataType;
+			$markers['DATA_TYPE_LABEL'] = $tcaTableService->getLabelField();
 
 			$markers['CONFIGURATION_GRID_TABLE_LABEL'] = <<<EOF
 			'{$tcaTableService->getLabelField()}' => array(

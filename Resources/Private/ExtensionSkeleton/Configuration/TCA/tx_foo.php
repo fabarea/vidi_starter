@@ -3,6 +3,10 @@ if (!defined('TYPO3_MODE')) die ('Access denied.');
 
 $tca = array(
 	'grid' => array(
+		'facets' => array(
+			'uid',
+			'###DATA_TYPE_LABEL###',
+		),
 		'columns' => array(
 			'__checkbox' => array(
 				'width' => '5px',
