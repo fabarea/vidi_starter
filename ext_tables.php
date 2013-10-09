@@ -7,7 +7,7 @@ if (!defined('TYPO3_MODE')) {
 if (TYPO3_MODE == 'BE') {
 	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
 		$_EXTKEY,
-		'tools', // Make media module a submodule of 'user'
+		'tools',
 		'm1',
 		'bottom', // Position
 		array(
