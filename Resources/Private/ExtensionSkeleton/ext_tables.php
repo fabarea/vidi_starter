@@ -4,7 +4,7 @@ if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-// Check from Vidi configuration what default module should be loaded.
+// Register some Vidi modules.
 // Make sure the class exists to avoid a Runtime Error
 if (TYPO3_MODE == 'BE' && class_exists('TYPO3\CMS\Vidi\ModuleLoader')) {
 
