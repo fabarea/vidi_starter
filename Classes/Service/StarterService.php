@@ -22,6 +22,8 @@ namespace TYPO3\CMS\VidiStarter\Service;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use TYPO3\CMS\Vidi\Tca\TcaService;
+use TYPO3\CMS\VidiStarter\Utility\FileUtility;
 
 /**
  * Service for kick starting an extension.
@@ -146,7 +148,7 @@ class StarterService {
 	 * @return void
 	 */
 	protected function writeFileStructure() {
-		\TYPO3\CMS\VidiStarter\Utility\FileUtility::recursiveCopy($this->source, $this->target);
+		FileUtility::recursiveCopy($this->source, $this->target);
 	}
 
 	/**
@@ -165,7 +167,7 @@ class StarterService {
 
 		if (!empty($dataType)) {
 
-			$tcaTableService = \TYPO3\CMS\Vidi\Tca\TcaServiceFactory::getTableService($dataType);
+			$tcaTableService = TcaService::table($dataType);
 
 			$markers['DATA_TYPE'] = $dataType;
 			$markers['DATA_TYPE_LABEL'] = $tcaTableService->getLabelField();
