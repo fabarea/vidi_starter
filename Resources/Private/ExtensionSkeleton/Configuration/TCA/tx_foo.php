@@ -15,7 +15,7 @@ $tca = array(
 			),
 			'uid' => array(
 				'visible' => FALSE,
-				'label' => 'LLL:EXT:vidi/Resources/Private/Language/###DATA_TYPE###.xlf:uid',
+				'label' => 'LLL:EXT:###EXTENSION_NAME###/Resources/Private/Language/###DATA_TYPE###.xlf:uid',
 				'width' => '5px',
 			),
 ###CONFIGURATION_GRID_TABLE_LABEL###
