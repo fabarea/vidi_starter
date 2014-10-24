@@ -70,7 +70,7 @@ class StarterService {
 			'fileExtension' => 'js',
 		),
 		array(
-			'filePath' => 'Configuration/TCA',
+			'filePath' => 'Configuration/TCA/Overrides',
 			'fileName' => 'tx_foo',
 			'fileExtension' => 'php',
 		),
