@@ -38,12 +38,12 @@
 
 
 	<script type="text/javascript">
-		$(document).ready(function () {
+		$(document).ready(function() {
 			$('.help').tooltip({
 				placement: 'right'
 			});
 
-			$('#btn-save').click(function (e) {
+			$('#btn-save').click(function(e) {
 
 				$('#form-starter').submit();
 				e.preventDefault();
@@ -68,15 +68,8 @@
 							<div class="controls">
 								<label class="checkbox" style="width: 500px">
 
-									<f:if condition="{vs:isInModuleLoader(dataType: '{dataType}')}">
-										<f:then>
-											<f:form.checkbox name="dataTypes[]" value="{dataType}" />
-										</f:then>
-										<f:else>
-											<f:form.checkbox name="dataTypes[]" value="{dataType}" />
-										</f:else>
-									</f:if>
-									    {dataType}
+									<f:form.checkbox name="dataTypes[]" value="{dataType}"/>
+									{dataType}
 								</label>
 							</div>
 						</f:for>
