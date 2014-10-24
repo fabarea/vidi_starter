@@ -21,4 +21,3 @@ module.tx_vidistarter {
 		layoutRootPath = {$module.tx_vidistarter.view.layoutRootPath}
 	}
 }
-

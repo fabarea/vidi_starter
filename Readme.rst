@@ -1,5 +1,5 @@
 Vidi Starter for TYPO3 CMS
-========================
+==========================
 
 Vidi_ is the code name of a list component designed for listing all kind of records along with advanced filtering capabilities.
 His companion, Vidi Starter aims to facilitate the initial steps for displaying a custom data type.
@@ -20,7 +20,7 @@ https://github.com/fudriot/vidi_starter.git
 
 
 Installation and requirement
-==============================
+============================
 
 The extension **requires TYPO3 6.1**. In case, a fresh TYPO3 set-up is available at http://get.typo3.org/.
 The extension is not yet released on the TER_. Download the source from the `master branch`_ and
