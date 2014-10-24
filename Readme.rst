@@ -22,9 +22,9 @@ https://github.com/fudriot/vidi_starter.git
 Installation and requirement
 ============================
 
-The extension **requires TYPO3 6.1**. In case, a fresh TYPO3 set-up is available at http://get.typo3.org/.
-The extension is not yet released on the TER_. Download the source from the `master branch`_ and
-install the extension as normal in the Extension Manager::
+The extension **requires TYPO3 CMS 6.2**. If you need to install CMS 6.2, refer to http://composer.typo3.org/.
+Otherwise download the source from the `master branch`_ and
+install the extension as normal in the Extension Manager. A new BE module "Vidi Starter" will be displayed::
 
 	# local installation
 	cd typo3conf/ext
